@@ -40,6 +40,7 @@ export const signUpAction = async (formData: FormData) => {
 };
 
 export const signInAction = async (formData: FormData) => {
+  console.log("signIn action invoked!");
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
   const supabase = await createClient();
@@ -128,6 +129,7 @@ export const resetPasswordAction = async (formData: FormData) => {
 };
 
 export const signOutAction = async () => {
+  console.log("signOut method invoked.");
   const supabase = await createClient();
   await supabase.auth.signOut();
   return redirect("/sign-in");
