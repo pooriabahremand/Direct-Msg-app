@@ -7,6 +7,6 @@ export default async function Home() {
     console.log("users: ", response[0]);
     return <p>Hi {response[0].username}</p>;
   } else {
-    return <p>Loading...</p>;
+    return <p>you are not authenticated.</p>;
   }
 }
