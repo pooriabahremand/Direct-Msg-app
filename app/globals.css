@@ -4,8 +4,29 @@
 
 @layer base {
   :root {
+    /* --shadow-6:;
+
+    --mauve-12:;
+    --mauve-11:;
+    --mauve-3:;
+
+    --violet-6:;
+    --violet-4:;
+    --violet-7:;
+    --violet-8:;
+    --violet-11:;
+    --violet-12:;
+
+    --green-4:;
+    --green-5:;
+    --green-7:;
+    --green-11:; */
+
     --black-a9: hsla(0, 0%, 0%, 0.702);
+
     --gray-1: hsl(0, 0%, 99%);
+    /* --gray-3:;  */
+
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -34,6 +55,8 @@
   }
 
   .dark {
+    --black-a9: hsla(0, 0%, 0%, 0.702);
+    --gray-1: hsl(0, 0%, 7%);
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
