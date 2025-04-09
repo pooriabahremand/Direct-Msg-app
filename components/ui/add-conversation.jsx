@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { Dialog } from "radix-ui";
 import { Cross2Icon } from "@radix-ui/react-icons";
@@ -5,25 +6,34 @@ import { Button } from "@/components/ui/button";
 import styles from "./add-conversation.module.css";
 
 const AddConversation = () => {
+  const [open, setOpen] = React.useState(false);
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("event");
+    setOpen(false);
+  }
+
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <button className={`${styles.Button} primary`}>Add conversation</button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.Overlay} />
         <Dialog.Content className={styles.Content}>
-          <Dialog.Title className={styles.Title}>Edit profile</Dialog.Title>
+          <Dialog.Title className={styles.Title}>Add conversation</Dialog.Title>
           <Dialog.Description className={styles.Description}>
-            Make changes to your profile here. Click save when you're done.
+            Enter user's email that you want to message and start it
+            immediately.
           </Dialog.Description>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <fieldset className={styles.Fieldset}>
               <label className={styles.Label} htmlFor="email">
                 Email
               </label>
               <input
                 className={styles.Input}
+                placeholder="someone@example.com"
                 id="email"
                 type="email"
                 required
@@ -36,9 +46,9 @@ const AddConversation = () => {
                 justifyContent: "flex-end",
               }}
             >
-              <Dialog.Close asChild>
-                <Button size={"sm"}>Submit</Button>
-              </Dialog.Close>
+              <button className={`${styles.Button} primary`} type="submit">
+                Submit
+              </button>
             </div>
           </form>
           <Dialog.Close asChild>
