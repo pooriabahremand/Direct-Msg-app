@@ -58,15 +58,13 @@
     outline-offset: 1px;
   }
 
-  &:global(.violet) {
-    background-color: var(--violet-4);
-    color: var(--violet-12);
+  &:global(.primary) {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     outline-color: var(--violet-6);
     &:hover {
-      background-color: var(--mauve-3);
-    }
-    &:focus {
-      box-shadow: 0 0 0 2px black;
+      background-color: hsl(var(--primary-hover));
+      cursor: pointer;
     }
   }
 
